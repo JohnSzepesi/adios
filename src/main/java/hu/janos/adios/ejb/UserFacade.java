@@ -1,14 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hu.janos.adios.ejb;
 
 import hu.janos.adios.model.User;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -27,6 +24,24 @@ public class UserFacade extends AbstractFacade<User> {
 
     public UserFacade() {
         super(User.class);
+    }
+    
+    public User getUserByName(String userName){
+    
+        User user = null;
+        try {
+            TypedQuery<User> query = em.createNamedQuery("User.findByUsername", User.class);
+            query.setParameter("userName", userName);
+            List<User> resultList = query.getResultList();
+            if(resultList.size()!=1){
+            throw new Exception();
+            }else{
+            user= resultList.get(0);
+            }
+        } catch (Exception e) {
+            
+        }
+        return user;
     }
     
 }

@@ -1,52 +1,32 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
     <h:head>
-        <title>Facelet Title</title>
+        <title>ADIOS ELTE-PPK</title>
         <h:outputStylesheet name="css/jsfcrud.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"></link>
     </h:head>
     <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
-        <br />
-        <h:link outcome="/view/currency/List" value="Show All Currency Items"/>
-        <br />
-        <h:link outcome="/view/financialCoordinator/List" value="Show All FinancialCoordinator Items"/>
-        <br />
-        <h:link outcome="/view/financialStatus/List" value="Show All FinancialStatus Items"/>
-        <br />
-        <h:link outcome="/view/funder/List" value="Show All Funder Items"/>
-        <br />
-        <h:link outcome="/view/funderContact/List" value="Show All FunderContact Items"/>
-        <br />
-        <h:link outcome="/view/projectAdministrator/List" value="Show All ProjectAdministrator Items"/>
-        <br />
-        <h:link outcome="/view/projectManager/List" value="Show All ProjectManager Items"/>
-        <br />
-        <h:link outcome="/view/projectStatus/List" value="Show All ProjectStatus Items"/>
-        <br />
-        <h:link outcome="/view/projects/List" value="Show All Projects Items"/>
-        <br />
-        <h:link outcome="/view/tender/List" value="Show All Tender Items"/>
-        <br />
-        <h:link outcome="/view/unit/List" value="Show All Unit Items"/>
-        <br />
-        <h:link outcome="/view/user/List" value="Show All User Items"/>
-        <br />
-        <h:link outcome="/view/userRight/List" value="Show All UserRight Items"/>
+        <div class="container-fluid"> 
+            <div class="row justify-content-center">
+                <div class="col-xl-3">
+        
+        
+        <ui:composition template="/template.xhtml">
+
+        </ui:composition>
+
+        
+                </div>
+            </div>
+        </div>
+        
     </h:body>
-
-
-
-
-
-
-
-
-
-
 
 
 

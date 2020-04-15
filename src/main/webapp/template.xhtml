@@ -16,30 +16,33 @@
         <p:growl id="growl" life="3000" />
 
         <p:layout fullPage="true">
-            <p:layoutUnit position="north" size="65" header="#{bundle.AppName}">
+            <p:layoutUnit position="west" size="170" header="#{bundle.AppName}">
                 <h:form id="menuForm">
-                    <p:menubar>
+                    <p:menu class="menu">
                         <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
-                        <p:submenu label="#{bundle.Maintenance}">
-                            <p:menuitem value="Currency" outcome="/view/currency/List.xhtml" />
-                            <p:menuitem value="FinancialCoordinator" outcome="/view/financialCoordinator/List.xhtml" />
-                            <p:menuitem value="FinancialStatus" outcome="/view/financialStatus/List.xhtml" />
-                            <p:menuitem value="Funder" outcome="/view/funder/List.xhtml" />
-                            <p:menuitem value="FunderContact" outcome="/view/funderContact/List.xhtml" />
-                            <p:menuitem value="ProjectAdministrator" outcome="/view/projectAdministrator/List.xhtml" />
-                            <p:menuitem value="ProjectManager" outcome="/view/projectManager/List.xhtml" />
-                            <p:menuitem value="ProjectStatus" outcome="/view/projectStatus/List.xhtml" />
-                            <p:menuitem value="Projects" outcome="/view/projects/List.xhtml" />
-                            <p:menuitem value="Tender" outcome="/view/tender/List.xhtml" />
-                            <p:menuitem value="Unit" outcome="/view/unit/List.xhtml" />
-                            <p:menuitem value="User" outcome="/view/user/List.xhtml" />
-                            <p:menuitem value="UserRight" outcome="/view/userRight/List.xhtml" />
+                        <p:submenu class="submenu" label="#{bundle.Maintenance}">
+                                                                          
+                            <p:menuitem value="Pénznem" outcome="/view/currency/List.xhtml" />
+                            <p:menuitem value="Pénzügyi koordinátor" outcome="/view/financialCoordinator/List.xhtml" />
+                            <p:menuitem value="Pénzügyi státusz" outcome="/view/financialStatus/List.xhtml" />
+                            <p:menuitem value="Támogató" outcome="/view/funder/List.xhtml" />
+                            <p:menuitem value="Támogató kapcsolattartó" outcome="/view/funderContact/List.xhtml" />
+                            <p:menuitem value="Projekt adminisztrátor" outcome="/view/projectAdministrator/List.xhtml" />
+                            <p:menuitem value="Projektmenedzser" outcome="/view/projectManager/List.xhtml" />
+                            <p:menuitem value="Projekt státusz" outcome="/view/projectStatus/List.xhtml" />
+                            <p:menuitem value="Projektek" outcome="/view/projects/List.xhtml" />
+                            <p:menuitem value="Felhívás" outcome="/view/tender/List.xhtml" />
+                            <p:menuitem value="Szervezeti egység" outcome="/view/unit/List.xhtml" />
+                            <p:menuitem value="Felhasználók" outcome="/view/user/List.xhtml" />
+                            <p:menuitem value="Felhasználói jogok" outcome="/view/userRight/List.xhtml" />
+                            <p:menuitem value="Kijelentkezés" action="#{logoutController.logout}" />
                         </p:submenu>
-                    </p:menubar>
+                    </p:menu>
+                    
                 </h:form>
             </p:layoutUnit>
 
-            <p:layoutUnit position="south" size="60">
+            <p:layoutUnit position="south" size="10">
                 <ui:insert name="footer"/>
             </p:layoutUnit>
 
