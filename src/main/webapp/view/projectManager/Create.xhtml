@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProjectManagerCreateDlg" widgetVar="ProjectManagerCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateProjectManagerTitle}">
+            <h:form id="ProjectManagerCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{projectManagerController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateProjectManagerLabel_projectmanagerId}" for="projectmanagerId" />
+                        <p:inputText id="projectmanagerId" value="#{projectManagerController.selected.projectmanagerId}" title="#{bundle.CreateProjectManagerTitle_projectmanagerId}" required="true" requiredMessage="#{bundle.CreateProjectManagerRequiredMessage_projectmanagerId}"/>
+                        <p:outputLabel value="#{bundle.CreateProjectManagerLabel_fullNamePromanag}" for="fullNamePromanag" />
+                        <p:inputText id="fullNamePromanag" value="#{projectManagerController.selected.fullNamePromanag}" title="#{bundle.CreateProjectManagerTitle_fullNamePromanag}" required="true" requiredMessage="#{bundle.CreateProjectManagerRequiredMessage_fullNamePromanag}"/>
+                        <p:outputLabel value="#{bundle.CreateProjectManagerLabel_mobile}" for="mobile" />
+                        <p:inputText id="mobile" value="#{projectManagerController.selected.mobile}" title="#{bundle.CreateProjectManagerTitle_mobile}" />
+                        <p:outputLabel value="#{bundle.CreateProjectManagerLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{projectManagerController.selected.email}" title="#{bundle.CreateProjectManagerTitle_email}" required="true" requiredMessage="#{bundle.CreateProjectManagerRequiredMessage_email}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{projectManagerController.create}" value="#{bundle.Save}" update="display,:ProjectManagerListForm:datalist,:growl" oncomplete="handleSubmit(args,'ProjectManagerCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ProjectManagerCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

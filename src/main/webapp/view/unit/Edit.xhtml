@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UnitEditDlg" widgetVar="UnitEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditUnitTitle}">
+            <h:form id="UnitEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{unitController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditUnitLabel_unitId}" for="unitId" />
+                        <p:inputText id="unitId" value="#{unitController.selected.unitId}" title="#{bundle.EditUnitTitle_unitId}" required="true" requiredMessage="#{bundle.EditUnitRequiredMessage_unitId}"/>
+                        <p:outputLabel value="#{bundle.EditUnitLabel_unitName}" for="unitName" />
+                        <p:inputText id="unitName" value="#{unitController.selected.unitName}" title="#{bundle.EditUnitTitle_unitName}" />
+                        <p:outputLabel value="#{bundle.EditUnitLabel_unitShortName}" for="unitShortName" />
+                        <p:inputText id="unitShortName" value="#{unitController.selected.unitShortName}" title="#{bundle.EditUnitTitle_unitShortName}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{unitController.update}" value="#{bundle.Save}" update="display,:UnitListForm:datalist,:growl" oncomplete="handleSubmit(args, 'UnitEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="UnitEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

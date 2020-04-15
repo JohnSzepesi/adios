@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TenderCreateDlg" widgetVar="TenderCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTenderTitle}">
+            <h:form id="TenderCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tenderController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateTenderLabel_tenderId}" for="tenderId" />
+                        <p:inputText id="tenderId" value="#{tenderController.selected.tenderId}" title="#{bundle.CreateTenderTitle_tenderId}" required="true" requiredMessage="#{bundle.CreateTenderRequiredMessage_tenderId}"/>
+                        <p:outputLabel value="#{bundle.CreateTenderLabel_tenderName}" for="tenderName" />
+                        <p:inputText id="tenderName" value="#{tenderController.selected.tenderName}" title="#{bundle.CreateTenderTitle_tenderName}" />
+                        <p:outputLabel value="#{bundle.CreateTenderLabel_tenderShortname}" for="tenderShortname" />
+                        <p:inputText id="tenderShortname" value="#{tenderController.selected.tenderShortname}" title="#{bundle.CreateTenderTitle_tenderShortname}" />
+                        <p:outputLabel value="#{bundle.CreateTenderLabel_tenderWebpage}" for="tenderWebpage" />
+                        <p:inputText id="tenderWebpage" value="#{tenderController.selected.tenderWebpage}" title="#{bundle.CreateTenderTitle_tenderWebpage}" required="true" requiredMessage="#{bundle.CreateTenderRequiredMessage_tenderWebpage}"/>
+                        <p:outputLabel value="#{bundle.CreateTenderLabel_notificationDeadline}" for="notificationDeadline" />
+                        <p:calendar id="notificationDeadline" pattern="MM/dd/yyyy" value="#{tenderController.selected.notificationDeadline}" title="#{bundle.EditTenderTitle_notificationDeadline}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateTenderLabel_financialDeadline}" for="financialDeadline" />
+                        <p:calendar id="financialDeadline" pattern="MM/dd/yyyy" value="#{tenderController.selected.financialDeadline}" title="#{bundle.EditTenderTitle_financialDeadline}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateTenderLabel_facultyDeadline}" for="facultyDeadline" />
+                        <p:calendar id="facultyDeadline" pattern="MM/dd/yyyy" value="#{tenderController.selected.facultyDeadline}" title="#{bundle.EditTenderTitle_facultyDeadline}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateTenderLabel_tenderCenterDeadline}" for="tenderCenterDeadline" />
+                        <p:calendar id="tenderCenterDeadline" pattern="MM/dd/yyyy" value="#{tenderController.selected.tenderCenterDeadline}" title="#{bundle.EditTenderTitle_tenderCenterDeadline}" required="true" requiredMessage="#{bundle.EditTenderRequiredMessage_tenderCenterDeadline}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateTenderLabel_submissionDeadline}" for="submissionDeadline" />
+                        <p:calendar id="submissionDeadline" pattern="MM/dd/yyyy" value="#{tenderController.selected.submissionDeadline}" title="#{bundle.EditTenderTitle_submissionDeadline}" required="true" requiredMessage="#{bundle.EditTenderRequiredMessage_submissionDeadline}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateTenderLabel_funderId}" for="funderId" />
+                        <p:selectOneMenu id="funderId" value="#{tenderController.selected.funderId}" >
+                            <f:selectItems value="#{funderController.itemsAvailableSelectOne}"
+                                           var="funderIdItem"
+                                           itemValue="#{funderIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tenderController.create}" value="#{bundle.Save}" update="display,:TenderListForm:datalist,:growl" oncomplete="handleSubmit(args,'TenderCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TenderCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

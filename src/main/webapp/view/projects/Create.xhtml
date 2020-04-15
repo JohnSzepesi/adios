@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProjectsCreateDlg" widgetVar="ProjectsCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateProjectsTitle}">
+            <h:form id="ProjectsCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{projectsController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_projectsId}" for="projectsId" />
+                        <p:inputText id="projectsId" value="#{projectsController.selected.projectsId}" title="#{bundle.CreateProjectsTitle_projectsId}" required="true" requiredMessage="#{bundle.CreateProjectsRequiredMessage_projectsId}"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_identificationNumber}" for="identificationNumber" />
+                        <p:inputText id="identificationNumber" value="#{projectsController.selected.identificationNumber}" title="#{bundle.CreateProjectsTitle_identificationNumber}" required="true" requiredMessage="#{bundle.CreateProjectsRequiredMessage_identificationNumber}"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_title}" for="title" />
+                        <p:inputText id="title" value="#{projectsController.selected.title}" title="#{bundle.CreateProjectsTitle_title}" required="true" requiredMessage="#{bundle.CreateProjectsRequiredMessage_title}"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_acronyme}" for="acronyme" />
+                        <p:inputText id="acronyme" value="#{projectsController.selected.acronyme}" title="#{bundle.CreateProjectsTitle_acronyme}" />
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_startDate}" for="startDate" />
+                        <p:calendar id="startDate" pattern="MM/dd/yyyy" value="#{projectsController.selected.startDate}" title="#{bundle.EditProjectsTitle_startDate}" required="true" requiredMessage="#{bundle.EditProjectsRequiredMessage_startDate}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_endDate}" for="endDate" />
+                        <p:calendar id="endDate" pattern="MM/dd/yyyy" value="#{projectsController.selected.endDate}" title="#{bundle.EditProjectsTitle_endDate}" required="true" requiredMessage="#{bundle.EditProjectsRequiredMessage_endDate}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_jobNumber}" for="jobNumber" />
+                        <p:inputText id="jobNumber" value="#{projectsController.selected.jobNumber}" title="#{bundle.CreateProjectsTitle_jobNumber}" />
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_remittanceCode}" for="remittanceCode" />
+                        <p:inputText id="remittanceCode" value="#{projectsController.selected.remittanceCode}" title="#{bundle.CreateProjectsTitle_remittanceCode}" />
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_division}" for="division" />
+                        <p:inputText id="division" value="#{projectsController.selected.division}" title="#{bundle.CreateProjectsTitle_division}" />
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_source}" for="source" />
+                        <p:inputText id="source" value="#{projectsController.selected.source}" title="#{bundle.CreateProjectsTitle_source}" />
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_eperNumber}" for="eperNumber" />
+                        <p:inputText id="eperNumber" value="#{projectsController.selected.eperNumber}" title="#{bundle.CreateProjectsTitle_eperNumber}" />
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_totalAid}" for="totalAid" />
+                        <p:inputText id="totalAid" value="#{projectsController.selected.totalAid}" title="#{bundle.CreateProjectsTitle_totalAid}" />
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_totalCost}" for="totalCost" />
+                        <p:inputText id="totalCost" value="#{projectsController.selected.totalCost}" title="#{bundle.CreateProjectsTitle_totalCost}" />
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_firstwsStart}" for="firstwsStart" />
+                        <p:calendar id="firstwsStart" pattern="MM/dd/yyyy" value="#{projectsController.selected.firstwsStart}" title="#{bundle.EditProjectsTitle_firstwsStart}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_firstwsEnd}" for="firstwsEnd" />
+                        <p:calendar id="firstwsEnd" pattern="MM/dd/yyyy" value="#{projectsController.selected.firstwsEnd}" title="#{bundle.EditProjectsTitle_firstwsEnd}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_secondwsStart}" for="secondwsStart" />
+                        <p:calendar id="secondwsStart" pattern="MM/dd/yyyy" value="#{projectsController.selected.secondwsStart}" title="#{bundle.EditProjectsTitle_secondwsStart}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_secondwsEnd}" for="secondwsEnd" />
+                        <p:calendar id="secondwsEnd" pattern="MM/dd/yyyy" value="#{projectsController.selected.secondwsEnd}" title="#{bundle.EditProjectsTitle_secondwsEnd}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_thirdwsStart}" for="thirdwsStart" />
+                        <p:calendar id="thirdwsStart" pattern="MM/dd/yyyy" value="#{projectsController.selected.thirdwsStart}" title="#{bundle.EditProjectsTitle_thirdwsStart}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_thirdwsEnd}" for="thirdwsEnd" />
+                        <p:calendar id="thirdwsEnd" pattern="MM/dd/yyyy" value="#{projectsController.selected.thirdwsEnd}" title="#{bundle.EditProjectsTitle_thirdwsEnd}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_fourthwsStart}" for="fourthwsStart" />
+                        <p:calendar id="fourthwsStart" pattern="MM/dd/yyyy" value="#{projectsController.selected.fourthwsStart}" title="#{bundle.EditProjectsTitle_fourthwsStart}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_fourthwsEnd}" for="fourthwsEnd" />
+                        <p:calendar id="fourthwsEnd" pattern="MM/dd/yyyy" value="#{projectsController.selected.fourthwsEnd}" title="#{bundle.EditProjectsTitle_fourthwsEnd}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_fifthwsStart}" for="fifthwsStart" />
+                        <p:calendar id="fifthwsStart" pattern="MM/dd/yyyy" value="#{projectsController.selected.fifthwsStart}" title="#{bundle.EditProjectsTitle_fifthwsStart}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_fifthwsEnd}" for="fifthwsEnd" />
+                        <p:calendar id="fifthwsEnd" pattern="MM/dd/yyyy" value="#{projectsController.selected.fifthwsEnd}" title="#{bundle.EditProjectsTitle_fifthwsEnd}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_sixthwsStart}" for="sixthwsStart" />
+                        <p:calendar id="sixthwsStart" pattern="MM/dd/yyyy" value="#{projectsController.selected.sixthwsStart}" title="#{bundle.EditProjectsTitle_sixthwsStart}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_sixthwsEnd}" for="sixthwsEnd" />
+                        <p:calendar id="sixthwsEnd" pattern="MM/dd/yyyy" value="#{projectsController.selected.sixthwsEnd}" title="#{bundle.EditProjectsTitle_sixthwsEnd}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_funderId}" for="funderId" />
+                        <p:selectOneMenu id="funderId" value="#{projectsController.selected.funderId}" >
+                            <f:selectItems value="#{funderController.itemsAvailableSelectOne}"
+                                           var="funderIdItem"
+                                           itemValue="#{funderIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_unitId}" for="unitId" />
+                        <p:selectOneMenu id="unitId" value="#{projectsController.selected.unitId}" >
+                            <f:selectItems value="#{unitController.itemsAvailableSelectOne}"
+                                           var="unitIdItem"
+                                           itemValue="#{unitIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_fundercontactId}" for="fundercontactId" />
+                        <p:selectOneMenu id="fundercontactId" value="#{projectsController.selected.fundercontactId}" >
+                            <f:selectItems value="#{funderContactController.itemsAvailableSelectOne}"
+                                           var="fundercontactIdItem"
+                                           itemValue="#{fundercontactIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_projectstatusId}" for="projectstatusId" />
+                        <p:selectOneMenu id="projectstatusId" value="#{projectsController.selected.projectstatusId}" >
+                            <f:selectItems value="#{projectStatusController.itemsAvailableSelectOne}"
+                                           var="projectstatusIdItem"
+                                           itemValue="#{projectstatusIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_projectadministratorId}" for="projectadministratorId" />
+                        <p:selectOneMenu id="projectadministratorId" value="#{projectsController.selected.projectadministratorId}" >
+                            <f:selectItems value="#{projectAdministratorController.itemsAvailableSelectOne}"
+                                           var="projectadministratorIdItem"
+                                           itemValue="#{projectadministratorIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_financialcoordinatorId}" for="financialcoordinatorId" />
+                        <p:selectOneMenu id="financialcoordinatorId" value="#{projectsController.selected.financialcoordinatorId}" >
+                            <f:selectItems value="#{financialCoordinatorController.itemsAvailableSelectOne}"
+                                           var="financialcoordinatorIdItem"
+                                           itemValue="#{financialcoordinatorIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_projectmanagerId}" for="projectmanagerId" />
+                        <p:selectOneMenu id="projectmanagerId" value="#{projectsController.selected.projectmanagerId}" >
+                            <f:selectItems value="#{projectManagerController.itemsAvailableSelectOne}"
+                                           var="projectmanagerIdItem"
+                                           itemValue="#{projectmanagerIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_financialstatusId}" for="financialstatusId" />
+                        <p:selectOneMenu id="financialstatusId" value="#{projectsController.selected.financialstatusId}" >
+                            <f:selectItems value="#{financialStatusController.itemsAvailableSelectOne}"
+                                           var="financialstatusIdItem"
+                                           itemValue="#{financialstatusIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_currencyId}" for="currencyId" />
+                        <p:selectOneMenu id="currencyId" value="#{projectsController.selected.currencyId}" >
+                            <f:selectItems value="#{currencyController.itemsAvailableSelectOne}"
+                                           var="currencyIdItem"
+                                           itemValue="#{currencyIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateProjectsLabel_tenderId}" for="tenderId" />
+                        <p:selectOneMenu id="tenderId" value="#{projectsController.selected.tenderId}" >
+                            <f:selectItems value="#{tenderController.itemsAvailableSelectOne}"
+                                           var="tenderIdItem"
+                                           itemValue="#{tenderIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{projectsController.create}" value="#{bundle.Save}" update="display,:ProjectsListForm:datalist,:growl" oncomplete="handleSubmit(args,'ProjectsCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ProjectsCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProjectStatusCreateDlg" widgetVar="ProjectStatusCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateProjectStatusTitle}">
+            <h:form id="ProjectStatusCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{projectStatusController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateProjectStatusLabel_projectstatusId}" for="projectstatusId" />
+                        <p:inputText id="projectstatusId" value="#{projectStatusController.selected.projectstatusId}" title="#{bundle.CreateProjectStatusTitle_projectstatusId}" required="true" requiredMessage="#{bundle.CreateProjectStatusRequiredMessage_projectstatusId}"/>
+                        <p:outputLabel value="#{bundle.CreateProjectStatusLabel_projectStatusName}" for="projectStatusName" />
+                        <p:inputText id="projectStatusName" value="#{projectStatusController.selected.projectStatusName}" title="#{bundle.CreateProjectStatusTitle_projectStatusName}" required="true" requiredMessage="#{bundle.CreateProjectStatusRequiredMessage_projectStatusName}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{projectStatusController.create}" value="#{bundle.Save}" update="display,:ProjectStatusListForm:datalist,:growl" oncomplete="handleSubmit(args,'ProjectStatusCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ProjectStatusCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

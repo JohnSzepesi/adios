@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FinancialCoordinatorEditDlg" widgetVar="FinancialCoordinatorEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditFinancialCoordinatorTitle}">
+            <h:form id="FinancialCoordinatorEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{financialCoordinatorController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditFinancialCoordinatorLabel_financialcoordinatorId}" for="financialcoordinatorId" />
+                        <p:inputText id="financialcoordinatorId" value="#{financialCoordinatorController.selected.financialcoordinatorId}" title="#{bundle.EditFinancialCoordinatorTitle_financialcoordinatorId}" required="true" requiredMessage="#{bundle.EditFinancialCoordinatorRequiredMessage_financialcoordinatorId}"/>
+                        <p:outputLabel value="#{bundle.EditFinancialCoordinatorLabel_fullNameFincoord}" for="fullNameFincoord" />
+                        <p:inputText id="fullNameFincoord" value="#{financialCoordinatorController.selected.fullNameFincoord}" title="#{bundle.EditFinancialCoordinatorTitle_fullNameFincoord}" required="true" requiredMessage="#{bundle.EditFinancialCoordinatorRequiredMessage_fullNameFincoord}"/>
+                        <p:outputLabel value="#{bundle.EditFinancialCoordinatorLabel_phone}" for="phone" />
+                        <p:inputText id="phone" value="#{financialCoordinatorController.selected.phone}" title="#{bundle.EditFinancialCoordinatorTitle_phone}" />
+                        <p:outputLabel value="#{bundle.EditFinancialCoordinatorLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{financialCoordinatorController.selected.email}" title="#{bundle.EditFinancialCoordinatorTitle_email}" required="true" requiredMessage="#{bundle.EditFinancialCoordinatorRequiredMessage_email}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{financialCoordinatorController.update}" value="#{bundle.Save}" update="display,:FinancialCoordinatorListForm:datalist,:growl" oncomplete="handleSubmit(args, 'FinancialCoordinatorEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="FinancialCoordinatorEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

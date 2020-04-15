@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TenderViewDlg" widgetVar="TenderViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewTenderTitle}">
+            <h:form id="TenderViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tenderController.selected != null}">
+                        <h:outputText value="#{bundle.ViewTenderLabel_tenderId}"/>
+                        <h:outputText value="#{tenderController.selected.tenderId}" title="#{bundle.ViewTenderTitle_tenderId}"/>
+                        <h:outputText value="#{bundle.ViewTenderLabel_tenderName}"/>
+                        <h:outputText value="#{tenderController.selected.tenderName}" title="#{bundle.ViewTenderTitle_tenderName}"/>
+                        <h:outputText value="#{bundle.ViewTenderLabel_tenderShortname}"/>
+                        <h:outputText value="#{tenderController.selected.tenderShortname}" title="#{bundle.ViewTenderTitle_tenderShortname}"/>
+                        <h:outputText value="#{bundle.ViewTenderLabel_tenderWebpage}"/>
+                        <h:outputText value="#{tenderController.selected.tenderWebpage}" title="#{bundle.ViewTenderTitle_tenderWebpage}"/>
+                        <h:outputText value="#{bundle.ViewTenderLabel_notificationDeadline}"/>
+                        <h:outputText value="#{tenderController.selected.notificationDeadline}" title="#{bundle.ViewTenderTitle_notificationDeadline}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewTenderLabel_financialDeadline}"/>
+                        <h:outputText value="#{tenderController.selected.financialDeadline}" title="#{bundle.ViewTenderTitle_financialDeadline}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewTenderLabel_facultyDeadline}"/>
+                        <h:outputText value="#{tenderController.selected.facultyDeadline}" title="#{bundle.ViewTenderTitle_facultyDeadline}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewTenderLabel_tenderCenterDeadline}"/>
+                        <h:outputText value="#{tenderController.selected.tenderCenterDeadline}" title="#{bundle.ViewTenderTitle_tenderCenterDeadline}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewTenderLabel_submissionDeadline}"/>
+                        <h:outputText value="#{tenderController.selected.submissionDeadline}" title="#{bundle.ViewTenderTitle_submissionDeadline}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewTenderLabel_funderId}"/>
+                        <h:outputText value="#{tenderController.selected.funderId}" title="#{bundle.ViewTenderTitle_funderId}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="TenderViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

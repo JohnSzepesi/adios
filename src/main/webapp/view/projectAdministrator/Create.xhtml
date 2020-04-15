@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProjectAdministratorCreateDlg" widgetVar="ProjectAdministratorCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateProjectAdministratorTitle}">
+            <h:form id="ProjectAdministratorCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{projectAdministratorController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateProjectAdministratorLabel_projectadministratorId}" for="projectadministratorId" />
+                        <p:inputText id="projectadministratorId" value="#{projectAdministratorController.selected.projectadministratorId}" title="#{bundle.CreateProjectAdministratorTitle_projectadministratorId}" required="true" requiredMessage="#{bundle.CreateProjectAdministratorRequiredMessage_projectadministratorId}"/>
+                        <p:outputLabel value="#{bundle.CreateProjectAdministratorLabel_fullNameProadmin}" for="fullNameProadmin" />
+                        <p:inputText id="fullNameProadmin" value="#{projectAdministratorController.selected.fullNameProadmin}" title="#{bundle.CreateProjectAdministratorTitle_fullNameProadmin}" required="true" requiredMessage="#{bundle.CreateProjectAdministratorRequiredMessage_fullNameProadmin}"/>
+                        <p:outputLabel value="#{bundle.CreateProjectAdministratorLabel_mobile}" for="mobile" />
+                        <p:inputText id="mobile" value="#{projectAdministratorController.selected.mobile}" title="#{bundle.CreateProjectAdministratorTitle_mobile}" />
+                        <p:outputLabel value="#{bundle.CreateProjectAdministratorLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{projectAdministratorController.selected.email}" title="#{bundle.CreateProjectAdministratorTitle_email}" />
+                        <p:outputLabel value="#{bundle.CreateProjectAdministratorLabel_unitId}" for="unitId" />
+                        <p:selectOneMenu id="unitId" value="#{projectAdministratorController.selected.unitId}" >
+                            <f:selectItems value="#{unitController.itemsAvailableSelectOne}"
+                                           var="unitIdItem"
+                                           itemValue="#{unitIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{projectAdministratorController.create}" value="#{bundle.Save}" update="display,:ProjectAdministratorListForm:datalist,:growl" oncomplete="handleSubmit(args,'ProjectAdministratorCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ProjectAdministratorCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

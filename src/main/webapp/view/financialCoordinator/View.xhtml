@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FinancialCoordinatorViewDlg" widgetVar="FinancialCoordinatorViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewFinancialCoordinatorTitle}">
+            <h:form id="FinancialCoordinatorViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{financialCoordinatorController.selected != null}">
+                        <h:outputText value="#{bundle.ViewFinancialCoordinatorLabel_financialcoordinatorId}"/>
+                        <h:outputText value="#{financialCoordinatorController.selected.financialcoordinatorId}" title="#{bundle.ViewFinancialCoordinatorTitle_financialcoordinatorId}"/>
+                        <h:outputText value="#{bundle.ViewFinancialCoordinatorLabel_fullNameFincoord}"/>
+                        <h:outputText value="#{financialCoordinatorController.selected.fullNameFincoord}" title="#{bundle.ViewFinancialCoordinatorTitle_fullNameFincoord}"/>
+                        <h:outputText value="#{bundle.ViewFinancialCoordinatorLabel_phone}"/>
+                        <h:outputText value="#{financialCoordinatorController.selected.phone}" title="#{bundle.ViewFinancialCoordinatorTitle_phone}"/>
+                        <h:outputText value="#{bundle.ViewFinancialCoordinatorLabel_email}"/>
+                        <h:outputText value="#{financialCoordinatorController.selected.email}" title="#{bundle.ViewFinancialCoordinatorTitle_email}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="FinancialCoordinatorViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

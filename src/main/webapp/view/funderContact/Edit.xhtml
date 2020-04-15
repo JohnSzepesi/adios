@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FunderContactEditDlg" widgetVar="FunderContactEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditFunderContactTitle}">
+            <h:form id="FunderContactEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{funderContactController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditFunderContactLabel_fundercontactId}" for="fundercontactId" />
+                        <p:inputText id="fundercontactId" value="#{funderContactController.selected.fundercontactId}" title="#{bundle.EditFunderContactTitle_fundercontactId}" required="true" requiredMessage="#{bundle.EditFunderContactRequiredMessage_fundercontactId}"/>
+                        <p:outputLabel value="#{bundle.EditFunderContactLabel_fullNameFundcont}" for="fullNameFundcont" />
+                        <p:inputText id="fullNameFundcont" value="#{funderContactController.selected.fullNameFundcont}" title="#{bundle.EditFunderContactTitle_fullNameFundcont}" required="true" requiredMessage="#{bundle.EditFunderContactRequiredMessage_fullNameFundcont}"/>
+                        <p:outputLabel value="#{bundle.EditFunderContactLabel_phone}" for="phone" />
+                        <p:inputText id="phone" value="#{funderContactController.selected.phone}" title="#{bundle.EditFunderContactTitle_phone}" />
+                        <p:outputLabel value="#{bundle.EditFunderContactLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{funderContactController.selected.email}" title="#{bundle.EditFunderContactTitle_email}" />
+                        <p:outputLabel value="#{bundle.EditFunderContactLabel_funderId}" for="funderId" />
+                        <p:selectOneMenu id="funderId" value="#{funderContactController.selected.funderId}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{funderController.itemsAvailableSelectOne}"
+                                           var="funderIdItem"
+                                           itemValue="#{funderIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{funderContactController.update}" value="#{bundle.Save}" update="display,:FunderContactListForm:datalist,:growl" oncomplete="handleSubmit(args, 'FunderContactEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="FunderContactEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

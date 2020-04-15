@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProjectsViewDlg" widgetVar="ProjectsViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewProjectsTitle}">
+            <h:form id="ProjectsViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{projectsController.selected != null}">
+                        <h:outputText value="#{bundle.ViewProjectsLabel_projectsId}"/>
+                        <h:outputText value="#{projectsController.selected.projectsId}" title="#{bundle.ViewProjectsTitle_projectsId}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_identificationNumber}"/>
+                        <h:outputText value="#{projectsController.selected.identificationNumber}" title="#{bundle.ViewProjectsTitle_identificationNumber}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_title}"/>
+                        <h:outputText value="#{projectsController.selected.title}" title="#{bundle.ViewProjectsTitle_title}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_acronyme}"/>
+                        <h:outputText value="#{projectsController.selected.acronyme}" title="#{bundle.ViewProjectsTitle_acronyme}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_startDate}"/>
+                        <h:outputText value="#{projectsController.selected.startDate}" title="#{bundle.ViewProjectsTitle_startDate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_endDate}"/>
+                        <h:outputText value="#{projectsController.selected.endDate}" title="#{bundle.ViewProjectsTitle_endDate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_jobNumber}"/>
+                        <h:outputText value="#{projectsController.selected.jobNumber}" title="#{bundle.ViewProjectsTitle_jobNumber}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_remittanceCode}"/>
+                        <h:outputText value="#{projectsController.selected.remittanceCode}" title="#{bundle.ViewProjectsTitle_remittanceCode}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_division}"/>
+                        <h:outputText value="#{projectsController.selected.division}" title="#{bundle.ViewProjectsTitle_division}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_source}"/>
+                        <h:outputText value="#{projectsController.selected.source}" title="#{bundle.ViewProjectsTitle_source}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_eperNumber}"/>
+                        <h:outputText value="#{projectsController.selected.eperNumber}" title="#{bundle.ViewProjectsTitle_eperNumber}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_totalAid}"/>
+                        <h:outputText value="#{projectsController.selected.totalAid}" title="#{bundle.ViewProjectsTitle_totalAid}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_totalCost}"/>
+                        <h:outputText value="#{projectsController.selected.totalCost}" title="#{bundle.ViewProjectsTitle_totalCost}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_firstwsStart}"/>
+                        <h:outputText value="#{projectsController.selected.firstwsStart}" title="#{bundle.ViewProjectsTitle_firstwsStart}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_firstwsEnd}"/>
+                        <h:outputText value="#{projectsController.selected.firstwsEnd}" title="#{bundle.ViewProjectsTitle_firstwsEnd}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_secondwsStart}"/>
+                        <h:outputText value="#{projectsController.selected.secondwsStart}" title="#{bundle.ViewProjectsTitle_secondwsStart}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_secondwsEnd}"/>
+                        <h:outputText value="#{projectsController.selected.secondwsEnd}" title="#{bundle.ViewProjectsTitle_secondwsEnd}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_thirdwsStart}"/>
+                        <h:outputText value="#{projectsController.selected.thirdwsStart}" title="#{bundle.ViewProjectsTitle_thirdwsStart}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_thirdwsEnd}"/>
+                        <h:outputText value="#{projectsController.selected.thirdwsEnd}" title="#{bundle.ViewProjectsTitle_thirdwsEnd}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_fourthwsStart}"/>
+                        <h:outputText value="#{projectsController.selected.fourthwsStart}" title="#{bundle.ViewProjectsTitle_fourthwsStart}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_fourthwsEnd}"/>
+                        <h:outputText value="#{projectsController.selected.fourthwsEnd}" title="#{bundle.ViewProjectsTitle_fourthwsEnd}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_fifthwsStart}"/>
+                        <h:outputText value="#{projectsController.selected.fifthwsStart}" title="#{bundle.ViewProjectsTitle_fifthwsStart}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_fifthwsEnd}"/>
+                        <h:outputText value="#{projectsController.selected.fifthwsEnd}" title="#{bundle.ViewProjectsTitle_fifthwsEnd}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_sixthwsStart}"/>
+                        <h:outputText value="#{projectsController.selected.sixthwsStart}" title="#{bundle.ViewProjectsTitle_sixthwsStart}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_sixthwsEnd}"/>
+                        <h:outputText value="#{projectsController.selected.sixthwsEnd}" title="#{bundle.ViewProjectsTitle_sixthwsEnd}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_funderId}"/>
+                        <h:outputText value="#{projectsController.selected.funderId}" title="#{bundle.ViewProjectsTitle_funderId}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_unitId}"/>
+                        <h:outputText value="#{projectsController.selected.unitId}" title="#{bundle.ViewProjectsTitle_unitId}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_fundercontactId}"/>
+                        <h:outputText value="#{projectsController.selected.fundercontactId}" title="#{bundle.ViewProjectsTitle_fundercontactId}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_projectstatusId}"/>
+                        <h:outputText value="#{projectsController.selected.projectstatusId}" title="#{bundle.ViewProjectsTitle_projectstatusId}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_projectadministratorId}"/>
+                        <h:outputText value="#{projectsController.selected.projectadministratorId}" title="#{bundle.ViewProjectsTitle_projectadministratorId}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_financialcoordinatorId}"/>
+                        <h:outputText value="#{projectsController.selected.financialcoordinatorId}" title="#{bundle.ViewProjectsTitle_financialcoordinatorId}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_projectmanagerId}"/>
+                        <h:outputText value="#{projectsController.selected.projectmanagerId}" title="#{bundle.ViewProjectsTitle_projectmanagerId}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_financialstatusId}"/>
+                        <h:outputText value="#{projectsController.selected.financialstatusId}" title="#{bundle.ViewProjectsTitle_financialstatusId}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_currencyId}"/>
+                        <h:outputText value="#{projectsController.selected.currencyId}" title="#{bundle.ViewProjectsTitle_currencyId}"/>
+                        <h:outputText value="#{bundle.ViewProjectsLabel_tenderId}"/>
+                        <h:outputText value="#{projectsController.selected.tenderId}" title="#{bundle.ViewProjectsTitle_tenderId}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ProjectsViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

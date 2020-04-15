@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListProjectsTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="ProjectsListForm">
+                <p:panel header="#{bundle.ListProjectsTitle}">
+                    <p:dataTable id="datalist" value="#{projectsController.items}" var="item"
+                                 selectionMode="single" selection="#{projectsController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.projectsId}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_projectsId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.projectsId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_identificationNumber}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.identificationNumber}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_title}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.title}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_acronyme}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.acronyme}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_startDate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.startDate}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_endDate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.endDate}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_jobNumber}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.jobNumber}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_remittanceCode}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.remittanceCode}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_division}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.division}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_source}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.source}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_eperNumber}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.eperNumber}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_totalAid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.totalAid}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_totalCost}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.totalCost}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_firstwsStart}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.firstwsStart}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_firstwsEnd}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.firstwsEnd}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_secondwsStart}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.secondwsStart}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_secondwsEnd}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.secondwsEnd}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_thirdwsStart}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.thirdwsStart}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_thirdwsEnd}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.thirdwsEnd}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_fourthwsStart}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fourthwsStart}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_fourthwsEnd}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fourthwsEnd}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_fifthwsStart}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fifthwsStart}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_fifthwsEnd}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fifthwsEnd}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_sixthwsStart}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.sixthwsStart}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_sixthwsEnd}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.sixthwsEnd}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_funderId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.funderId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_unitId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.unitId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_fundercontactId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fundercontactId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_projectstatusId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.projectstatusId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_projectadministratorId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.projectadministratorId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_financialcoordinatorId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.financialcoordinatorId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_projectmanagerId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.projectmanagerId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_financialstatusId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.financialstatusId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_currencyId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.currencyId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListProjectsTitle_tenderId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tenderId}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{projectsController.prepareCreate}" update=":ProjectsCreateForm" oncomplete="PF('ProjectsCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":ProjectsViewForm" oncomplete="PF('ProjectsViewDialog').show()" disabled="#{empty projectsController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":ProjectsEditForm" oncomplete="PF('ProjectsEditDialog').show()" disabled="#{empty projectsController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{projectsController.destroy}" update=":growl,datalist" disabled="#{empty projectsController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>
