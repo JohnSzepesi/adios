@@ -12,8 +12,7 @@
             <h:form id="UserCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{userController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateUserLabel_userId}" for="userId" />
-                        <p:inputText id="userId" value="#{userController.selected.userId}" title="#{bundle.CreateUserTitle_userId}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_userId}"/>
+                        
                         <p:outputLabel value="#{bundle.CreateUserLabel_username}" for="username" />
                         <p:inputText id="username" value="#{userController.selected.username}" title="#{bundle.CreateUserTitle_username}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_username}"/>
                         <p:outputLabel value="#{bundle.CreateUserLabel_password}" for="password" />
@@ -24,6 +23,7 @@
                         <p:selectOneMenu id="userrightId" value="#{userController.selected.userrightId}" >
                             <f:selectItems value="#{userRightController.itemsAvailableSelectOne}"
                                            var="userrightIdItem"
+                                           itemLabel="#{userrightIdItem.userRightName}"
                                            itemValue="#{userrightIdItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>

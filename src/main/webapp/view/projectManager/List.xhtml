@@ -18,39 +18,43 @@
                 <p:panel header="#{bundle.ListProjectManagerTitle}">
                     <p:dataTable id="datalist" value="#{projectManagerController.items}" var="item"
                                  selectionMode="single" selection="#{projectManagerController.selected}"
-                                 paginator="true"
                                  rowKey="#{item.projectmanagerId}"
-                                 rows="10"
-                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 emptyMessage="Nincs megjeleníthető adatom"
+                                 widgetVar="projectManagerTable"
+                                 editable="true"
                                  >
 
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
-                        <p:column>
+                        <!--<p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProjectManagerTitle_projectmanagerId}"/>
                             </f:facet>
                             <h:outputText value="#{item.projectmanagerId}"/>
-                        </p:column>
-                        <p:column>
+                        </p:column>-->
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProjectManagerTitle_fullNamePromanag}"/>
                             </f:facet>
                             <h:outputText value="#{item.fullNamePromanag}"/>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProjectManagerTitle_mobile}"/>
                             </f:facet>
                             <h:outputText value="#{item.mobile}"/>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProjectManagerTitle_email}"/>
                             </f:facet>
                             <h:outputText value="#{item.email}"/>
                         </p:column>
+                        
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{projectManagerController.prepareCreate}" update=":ProjectManagerCreateForm" oncomplete="PF('ProjectManagerCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":ProjectManagerViewForm" oncomplete="PF('ProjectManagerViewDialog').show()" disabled="#{empty projectManagerController.selected}"/>

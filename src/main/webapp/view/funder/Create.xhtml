@@ -12,8 +12,7 @@
             <h:form id="FunderCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{funderController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateFunderLabel_funderId}" for="funderId" />
-                        <p:inputText id="funderId" value="#{funderController.selected.funderId}" title="#{bundle.CreateFunderTitle_funderId}" required="true" requiredMessage="#{bundle.CreateFunderRequiredMessage_funderId}"/>
+                        
                         <p:outputLabel value="#{bundle.CreateFunderLabel_name}" for="name" />
                         <p:inputText id="name" value="#{funderController.selected.name}" title="#{bundle.CreateFunderTitle_name}" required="true" requiredMessage="#{bundle.CreateFunderRequiredMessage_name}"/>
                         <p:outputLabel value="#{bundle.CreateFunderLabel_webpage}" for="webpage" />

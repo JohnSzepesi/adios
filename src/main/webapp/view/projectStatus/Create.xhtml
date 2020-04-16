@@ -12,8 +12,7 @@
             <h:form id="ProjectStatusCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{projectStatusController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateProjectStatusLabel_projectstatusId}" for="projectstatusId" />
-                        <p:inputText id="projectstatusId" value="#{projectStatusController.selected.projectstatusId}" title="#{bundle.CreateProjectStatusTitle_projectstatusId}" required="true" requiredMessage="#{bundle.CreateProjectStatusRequiredMessage_projectstatusId}"/>
+                        
                         <p:outputLabel value="#{bundle.CreateProjectStatusLabel_projectStatusName}" for="projectStatusName" />
                         <p:inputText id="projectStatusName" value="#{projectStatusController.selected.projectStatusName}" title="#{bundle.CreateProjectStatusTitle_projectStatusName}" required="true" requiredMessage="#{bundle.CreateProjectStatusRequiredMessage_projectStatusName}"/>
                     </p:panelGrid>

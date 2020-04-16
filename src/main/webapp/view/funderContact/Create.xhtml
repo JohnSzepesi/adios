@@ -12,8 +12,7 @@
             <h:form id="FunderContactCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{funderContactController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateFunderContactLabel_fundercontactId}" for="fundercontactId" />
-                        <p:inputText id="fundercontactId" value="#{funderContactController.selected.fundercontactId}" title="#{bundle.CreateFunderContactTitle_fundercontactId}" required="true" requiredMessage="#{bundle.CreateFunderContactRequiredMessage_fundercontactId}"/>
+                        
                         <p:outputLabel value="#{bundle.CreateFunderContactLabel_fullNameFundcont}" for="fullNameFundcont" />
                         <p:inputText id="fullNameFundcont" value="#{funderContactController.selected.fullNameFundcont}" title="#{bundle.CreateFunderContactTitle_fullNameFundcont}" required="true" requiredMessage="#{bundle.CreateFunderContactRequiredMessage_fullNameFundcont}"/>
                         <p:outputLabel value="#{bundle.CreateFunderContactLabel_phone}" for="phone" />

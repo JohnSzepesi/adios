@@ -18,27 +18,31 @@
                 <p:panel header="#{bundle.ListCurrencyTitle}">
                     <p:dataTable id="datalist" value="#{currencyController.items}" var="item"
                                  selectionMode="single" selection="#{currencyController.selected}"
-                                 paginator="true"
                                  rowKey="#{item.currencyId}"
-                                 rows="10"
-                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 emptyMessage="Nincs megjeleníthető adatom"
+                                 widgetVar="currencyTable"
+                                 editable="true"
+                                 styleClass="currencyCenteredcolumn"
+                                
                                  >
 
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
-                        <p:column>
+                        <!--<p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListCurrencyTitle_currencyId}"/>
                             </f:facet>
                             <h:outputText value="#{item.currencyId}"/>
-                        </p:column>
+                        </p:column>-->
+                        <div class="center">
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListCurrencyTitle_currencyName}"/>
                             </f:facet>
                             <h:outputText value="#{item.currencyName}"/>
                         </p:column>
+                        </div>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{currencyController.prepareCreate}" update=":CurrencyCreateForm" oncomplete="PF('CurrencyCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":CurrencyViewForm" oncomplete="PF('CurrencyViewDialog').show()" disabled="#{empty currencyController.selected}"/>

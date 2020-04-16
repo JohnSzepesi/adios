@@ -12,8 +12,7 @@
             <h:form id="TenderCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{tenderController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateTenderLabel_tenderId}" for="tenderId" />
-                        <p:inputText id="tenderId" value="#{tenderController.selected.tenderId}" title="#{bundle.CreateTenderTitle_tenderId}" required="true" requiredMessage="#{bundle.CreateTenderRequiredMessage_tenderId}"/>
+                        
                         <p:outputLabel value="#{bundle.CreateTenderLabel_tenderName}" for="tenderName" />
                         <p:inputText id="tenderName" value="#{tenderController.selected.tenderName}" title="#{bundle.CreateTenderTitle_tenderName}" />
                         <p:outputLabel value="#{bundle.CreateTenderLabel_tenderShortname}" for="tenderShortname" />

@@ -18,22 +18,24 @@
                 <p:panel header="#{bundle.ListFinancialStatusTitle}">
                     <p:dataTable id="datalist" value="#{financialStatusController.items}" var="item"
                                  selectionMode="single" selection="#{financialStatusController.selected}"
-                                 paginator="true"
                                  rowKey="#{item.financialstatusId}"
                                  rows="10"
-                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 emptyMessage="Nincs megjeleníthető adatom"
+                                 widgetVar="financialStatusTable"
+                                 editable="true"
+                                 styleClass="financialStatusCenteredcolumn"
                                  >
 
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
-                        <p:column>
+                        <!--<p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListFinancialStatusTitle_financialstatusId}"/>
                             </f:facet>
                             <h:outputText value="#{item.financialstatusId}"/>
-                        </p:column>
-                        <p:column>
+                        </p:column>-->
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListFinancialStatusTitle_financialStatusName}"/>
                             </f:facet>

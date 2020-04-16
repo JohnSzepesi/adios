@@ -18,45 +18,50 @@
                 <p:panel header="#{bundle.ListFunderContactTitle}">
                     <p:dataTable id="datalist" value="#{funderContactController.items}" var="item"
                                  selectionMode="single" selection="#{funderContactController.selected}"
-                                 paginator="true"
                                  rowKey="#{item.fundercontactId}"
-                                 rows="10"
-                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 widgetVar="funderContactTable"
+                                 editable="true"
+                                 emptyMessage="Nincs megjeleníthető adatom"
                                  >
 
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
-                        <p:column>
+                        <!--<p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListFunderContactTitle_fundercontactId}"/>
                             </f:facet>
                             <h:outputText value="#{item.fundercontactId}"/>
-                        </p:column>
-                        <p:column>
+                        </p:column>-->
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListFunderContactTitle_fullNameFundcont}"/>
                             </f:facet>
                             <h:outputText value="#{item.fullNameFundcont}"/>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListFunderContactTitle_phone}"/>
                             </f:facet>
                             <h:outputText value="#{item.phone}"/>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListFunderContactTitle_email}"/>
                             </f:facet>
                             <h:outputText value="#{item.email}"/>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListFunderContactTitle_funderId}"/>
                             </f:facet>
                             <h:outputText value="#{item.funderId}"/>
                         </p:column>
+                        
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{funderContactController.prepareCreate}" update=":FunderContactCreateForm" oncomplete="PF('FunderContactCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":FunderContactViewForm" oncomplete="PF('FunderContactViewDialog').show()" disabled="#{empty funderContactController.selected}"/>

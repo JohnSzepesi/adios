@@ -12,8 +12,7 @@
             <h:form id="ProjectManagerCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{projectManagerController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateProjectManagerLabel_projectmanagerId}" for="projectmanagerId" />
-                        <p:inputText id="projectmanagerId" value="#{projectManagerController.selected.projectmanagerId}" title="#{bundle.CreateProjectManagerTitle_projectmanagerId}" required="true" requiredMessage="#{bundle.CreateProjectManagerRequiredMessage_projectmanagerId}"/>
+                        
                         <p:outputLabel value="#{bundle.CreateProjectManagerLabel_fullNamePromanag}" for="fullNamePromanag" />
                         <p:inputText id="fullNamePromanag" value="#{projectManagerController.selected.fullNamePromanag}" title="#{bundle.CreateProjectManagerTitle_fullNamePromanag}" required="true" requiredMessage="#{bundle.CreateProjectManagerRequiredMessage_fullNamePromanag}"/>
                         <p:outputLabel value="#{bundle.CreateProjectManagerLabel_mobile}" for="mobile" />

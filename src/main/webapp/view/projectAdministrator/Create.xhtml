@@ -12,8 +12,7 @@
             <h:form id="ProjectAdministratorCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{projectAdministratorController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateProjectAdministratorLabel_projectadministratorId}" for="projectadministratorId" />
-                        <p:inputText id="projectadministratorId" value="#{projectAdministratorController.selected.projectadministratorId}" title="#{bundle.CreateProjectAdministratorTitle_projectadministratorId}" required="true" requiredMessage="#{bundle.CreateProjectAdministratorRequiredMessage_projectadministratorId}"/>
+                        
                         <p:outputLabel value="#{bundle.CreateProjectAdministratorLabel_fullNameProadmin}" for="fullNameProadmin" />
                         <p:inputText id="fullNameProadmin" value="#{projectAdministratorController.selected.fullNameProadmin}" title="#{bundle.CreateProjectAdministratorTitle_fullNameProadmin}" required="true" requiredMessage="#{bundle.CreateProjectAdministratorRequiredMessage_fullNameProadmin}"/>
                         <p:outputLabel value="#{bundle.CreateProjectAdministratorLabel_mobile}" for="mobile" />

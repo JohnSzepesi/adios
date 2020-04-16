@@ -18,85 +18,95 @@
                 <p:panel header="#{bundle.ListTenderTitle}">
                     <p:dataTable id="datalist" value="#{tenderController.items}" var="item"
                                  selectionMode="single" selection="#{tenderController.selected}"
-                                 paginator="true"
                                  rowKey="#{item.tenderId}"
-                                 rows="10"
-                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 emptyMessage="Nincs megjeleníthető adatom"
+                                 widgetVar="tenderTable"
+                                 editable="true"
                                  >
 
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
-                        <p:column>
+                        <!--<p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTenderTitle_tenderId}"/>
                             </f:facet>
                             <h:outputText value="#{item.tenderId}"/>
-                        </p:column>
-                        <p:column>
+                        </p:column>-->
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTenderTitle_tenderName}"/>
                             </f:facet>
                             <h:outputText value="#{item.tenderName}"/>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTenderTitle_tenderShortname}"/>
                             </f:facet>
                             <h:outputText value="#{item.tenderShortname}"/>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTenderTitle_tenderWebpage}"/>
                             </f:facet>
                             <h:outputText value="#{item.tenderWebpage}"/>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTenderTitle_notificationDeadline}"/>
                             </f:facet>
                             <h:outputText value="#{item.notificationDeadline}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="yyyy/MM/dd" />
                             </h:outputText>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTenderTitle_financialDeadline}"/>
                             </f:facet>
                             <h:outputText value="#{item.financialDeadline}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="yyyy/MM/dd" />
                             </h:outputText>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTenderTitle_facultyDeadline}"/>
                             </f:facet>
                             <h:outputText value="#{item.facultyDeadline}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="yyyy/MM/dd" />
                             </h:outputText>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTenderTitle_tenderCenterDeadline}"/>
                             </f:facet>
                             <h:outputText value="#{item.tenderCenterDeadline}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="yyyy/MM/dd" />
                             </h:outputText>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTenderTitle_submissionDeadline}"/>
                             </f:facet>
                             <h:outputText value="#{item.submissionDeadline}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="yyyy/MM/dd" />
                             </h:outputText>
                         </p:column>
-                        <p:column>
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListTenderTitle_funderId}"/>
                             </f:facet>
-                            <h:outputText value="#{item.funderId}"/>
+                            <h:outputText value="#{item.funderId.name}"/>
                         </p:column>
+                        
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{tenderController.prepareCreate}" update=":TenderCreateForm" oncomplete="PF('TenderCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":TenderViewForm" oncomplete="PF('TenderViewDialog').show()" disabled="#{empty tenderController.selected}"/>

@@ -18,27 +18,29 @@
                 <p:panel header="#{bundle.ListProjectStatusTitle}">
                     <p:dataTable id="datalist" value="#{projectStatusController.items}" var="item"
                                  selectionMode="single" selection="#{projectStatusController.selected}"
-                                 paginator="true"
                                  rowKey="#{item.projectstatusId}"
-                                 rows="10"
-                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 emptyMessage="Nincs megjeleníthető adatom"
+                                 widgetVar="projectStatusTable"
+                                 editable="true"
                                  >
 
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
-                        <p:column>
+                        <!--<p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProjectStatusTitle_projectstatusId}"/>
                             </f:facet>
                             <h:outputText value="#{item.projectstatusId}"/>
-                        </p:column>
-                        <p:column>
+                        </p:column>-->
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProjectStatusTitle_projectStatusName}"/>
                             </f:facet>
                             <h:outputText value="#{item.projectStatusName}"/>
                         </p:column>
+                        
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{projectStatusController.prepareCreate}" update=":ProjectStatusCreateForm" oncomplete="PF('ProjectStatusCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":ProjectStatusViewForm" oncomplete="PF('ProjectStatusViewDialog').show()" disabled="#{empty projectStatusController.selected}"/>

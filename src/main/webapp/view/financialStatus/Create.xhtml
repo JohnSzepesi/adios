@@ -12,8 +12,7 @@
             <h:form id="FinancialStatusCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{financialStatusController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateFinancialStatusLabel_financialstatusId}" for="financialstatusId" />
-                        <p:inputText id="financialstatusId" value="#{financialStatusController.selected.financialstatusId}" title="#{bundle.CreateFinancialStatusTitle_financialstatusId}" required="true" requiredMessage="#{bundle.CreateFinancialStatusRequiredMessage_financialstatusId}"/>
+                        
                         <p:outputLabel value="#{bundle.CreateFinancialStatusLabel_financialStatusName}" for="financialStatusName" />
                         <p:inputText id="financialStatusName" value="#{financialStatusController.selected.financialStatusName}" title="#{bundle.CreateFinancialStatusTitle_financialStatusName}" />
                     </p:panelGrid>

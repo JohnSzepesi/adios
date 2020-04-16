@@ -18,27 +18,30 @@
                 <p:panel header="#{bundle.ListUserRightTitle}">
                     <p:dataTable id="datalist" value="#{userRightController.items}" var="item"
                                  selectionMode="single" selection="#{userRightController.selected}"
-                                 paginator="true"
+                                 
                                  rowKey="#{item.userrightId}"
-                                 rows="10"
-                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 emptyMessage="Nincs megjeleníthető adatom"
+                                 widgetVar="userRightTable"
+                                 editable="true"
                                  >
 
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
-                        <p:column>
+                        <!--<p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListUserRightTitle_userrightId}"/>
                             </f:facet>
                             <h:outputText value="#{item.userrightId}"/>
-                        </p:column>
-                        <p:column>
+                        </p:column>-->
+                        
+                        <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListUserRightTitle_userRightName}"/>
                             </f:facet>
                             <h:outputText value="#{item.userRightName}"/>
                         </p:column>
+                        
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{userRightController.prepareCreate}" update=":UserRightCreateForm" oncomplete="PF('UserRightCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":UserRightViewForm" oncomplete="PF('UserRightViewDialog').show()" disabled="#{empty userRightController.selected}"/>
