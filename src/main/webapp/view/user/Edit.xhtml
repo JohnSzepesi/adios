@@ -12,8 +12,7 @@
             <h:form id="UserEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{userController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditUserLabel_userId}" for="userId" />
-                        <p:inputText id="userId" value="#{userController.selected.userId}" title="#{bundle.EditUserTitle_userId}" required="true" requiredMessage="#{bundle.EditUserRequiredMessage_userId}"/>
+                        
                         <p:outputLabel value="#{bundle.EditUserLabel_username}" for="username" />
                         <p:inputText id="username" value="#{userController.selected.username}" title="#{bundle.EditUserTitle_username}" required="true" requiredMessage="#{bundle.EditUserRequiredMessage_username}"/>
                         <p:outputLabel value="#{bundle.EditUserLabel_password}" for="password" />
@@ -25,6 +24,7 @@
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{userRightController.itemsAvailableSelectOne}"
                                            var="userrightIdItem"
+                                           itemLabel="#{userrightIdItem.userRightName}"
                                            itemValue="#{userrightIdItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>

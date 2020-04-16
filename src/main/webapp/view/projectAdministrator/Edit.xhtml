@@ -12,8 +12,7 @@
             <h:form id="ProjectAdministratorEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{projectAdministratorController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditProjectAdministratorLabel_projectadministratorId}" for="projectadministratorId" />
-                        <p:inputText id="projectadministratorId" value="#{projectAdministratorController.selected.projectadministratorId}" title="#{bundle.EditProjectAdministratorTitle_projectadministratorId}" required="true" requiredMessage="#{bundle.EditProjectAdministratorRequiredMessage_projectadministratorId}"/>
+                        
                         <p:outputLabel value="#{bundle.EditProjectAdministratorLabel_fullNameProadmin}" for="fullNameProadmin" />
                         <p:inputText id="fullNameProadmin" value="#{projectAdministratorController.selected.fullNameProadmin}" title="#{bundle.EditProjectAdministratorTitle_fullNameProadmin}" required="true" requiredMessage="#{bundle.EditProjectAdministratorRequiredMessage_fullNameProadmin}"/>
                         <p:outputLabel value="#{bundle.EditProjectAdministratorLabel_mobile}" for="mobile" />
@@ -25,6 +24,7 @@
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{unitController.itemsAvailableSelectOne}"
                                            var="unitIdItem"
+                                           itemLabel="#{unitIdItem.unitName}"
                                            itemValue="#{unitIdItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>

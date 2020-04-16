@@ -12,8 +12,7 @@
             <h:form id="CurrencyEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{currencyController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditCurrencyLabel_currencyId}" for="currencyId" />
-                        <p:inputText id="currencyId" value="#{currencyController.selected.currencyId}" title="#{bundle.EditCurrencyTitle_currencyId}" required="true" requiredMessage="#{bundle.EditCurrencyRequiredMessage_currencyId}"/>
+                        
                         <p:outputLabel value="#{bundle.EditCurrencyLabel_currencyName}" for="currencyName" />
                         <p:inputText id="currencyName" value="#{currencyController.selected.currencyName}" title="#{bundle.EditCurrencyTitle_currencyName}" />
                     </p:panelGrid>

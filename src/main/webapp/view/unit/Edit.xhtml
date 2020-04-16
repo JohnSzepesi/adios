@@ -12,8 +12,7 @@
             <h:form id="UnitEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{unitController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditUnitLabel_unitId}" for="unitId" />
-                        <p:inputText id="unitId" value="#{unitController.selected.unitId}" title="#{bundle.EditUnitTitle_unitId}" required="true" requiredMessage="#{bundle.EditUnitRequiredMessage_unitId}"/>
+                        
                         <p:outputLabel value="#{bundle.EditUnitLabel_unitName}" for="unitName" />
                         <p:inputText id="unitName" value="#{unitController.selected.unitName}" title="#{bundle.EditUnitTitle_unitName}" />
                         <p:outputLabel value="#{bundle.EditUnitLabel_unitShortName}" for="unitShortName" />

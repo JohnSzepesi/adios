@@ -12,8 +12,7 @@
             <h:form id="UnitViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{unitController.selected != null}">
-                        <h:outputText value="#{bundle.ViewUnitLabel_unitId}"/>
-                        <h:outputText value="#{unitController.selected.unitId}" title="#{bundle.ViewUnitTitle_unitId}"/>
+                        
                         <h:outputText value="#{bundle.ViewUnitLabel_unitName}"/>
                         <h:outputText value="#{unitController.selected.unitName}" title="#{bundle.ViewUnitTitle_unitName}"/>
                         <h:outputText value="#{bundle.ViewUnitLabel_unitShortName}"/>

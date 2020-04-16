@@ -12,8 +12,7 @@
             <h:form id="TenderEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{tenderController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditTenderLabel_tenderId}" for="tenderId" />
-                        <p:inputText id="tenderId" value="#{tenderController.selected.tenderId}" title="#{bundle.EditTenderTitle_tenderId}" required="true" requiredMessage="#{bundle.EditTenderRequiredMessage_tenderId}"/>
+                        
                         <p:outputLabel value="#{bundle.EditTenderLabel_tenderName}" for="tenderName" />
                         <p:inputText id="tenderName" value="#{tenderController.selected.tenderName}" title="#{bundle.EditTenderTitle_tenderName}" />
                         <p:outputLabel value="#{bundle.EditTenderLabel_tenderShortname}" for="tenderShortname" />
@@ -21,20 +20,21 @@
                         <p:outputLabel value="#{bundle.EditTenderLabel_tenderWebpage}" for="tenderWebpage" />
                         <p:inputText id="tenderWebpage" value="#{tenderController.selected.tenderWebpage}" title="#{bundle.EditTenderTitle_tenderWebpage}" required="true" requiredMessage="#{bundle.EditTenderRequiredMessage_tenderWebpage}"/>
                         <p:outputLabel value="#{bundle.EditTenderLabel_notificationDeadline}" for="notificationDeadline" />
-                        <p:calendar id="notificationDeadline" pattern="MM/dd/yyyy" value="#{tenderController.selected.notificationDeadline}" title="#{bundle.EditTenderTitle_notificationDeadline}"  showOn="button"/>
+                        <p:calendar id="notificationDeadline" pattern="yyyy/MM/dd" value="#{tenderController.selected.notificationDeadline}" title="#{bundle.EditTenderTitle_notificationDeadline}"  showOn="button"/>
                         <p:outputLabel value="#{bundle.EditTenderLabel_financialDeadline}" for="financialDeadline" />
-                        <p:calendar id="financialDeadline" pattern="MM/dd/yyyy" value="#{tenderController.selected.financialDeadline}" title="#{bundle.EditTenderTitle_financialDeadline}"  showOn="button"/>
+                        <p:calendar id="financialDeadline" pattern="yyyy/MM/dd" value="#{tenderController.selected.financialDeadline}" title="#{bundle.EditTenderTitle_financialDeadline}"  showOn="button"/>
                         <p:outputLabel value="#{bundle.EditTenderLabel_facultyDeadline}" for="facultyDeadline" />
-                        <p:calendar id="facultyDeadline" pattern="MM/dd/yyyy" value="#{tenderController.selected.facultyDeadline}" title="#{bundle.EditTenderTitle_facultyDeadline}"  showOn="button"/>
+                        <p:calendar id="facultyDeadline" pattern="yyyy/MM/dd" value="#{tenderController.selected.facultyDeadline}" title="#{bundle.EditTenderTitle_facultyDeadline}"  showOn="button"/>
                         <p:outputLabel value="#{bundle.EditTenderLabel_tenderCenterDeadline}" for="tenderCenterDeadline" />
-                        <p:calendar id="tenderCenterDeadline" pattern="MM/dd/yyyy" value="#{tenderController.selected.tenderCenterDeadline}" title="#{bundle.EditTenderTitle_tenderCenterDeadline}" required="true" requiredMessage="#{bundle.EditTenderRequiredMessage_tenderCenterDeadline}" showOn="button"/>
+                        <p:calendar id="tenderCenterDeadline" pattern="yyyy/MM/dd" value="#{tenderController.selected.tenderCenterDeadline}" title="#{bundle.EditTenderTitle_tenderCenterDeadline}" required="true" requiredMessage="#{bundle.EditTenderRequiredMessage_tenderCenterDeadline}" showOn="button"/>
                         <p:outputLabel value="#{bundle.EditTenderLabel_submissionDeadline}" for="submissionDeadline" />
-                        <p:calendar id="submissionDeadline" pattern="MM/dd/yyyy" value="#{tenderController.selected.submissionDeadline}" title="#{bundle.EditTenderTitle_submissionDeadline}" required="true" requiredMessage="#{bundle.EditTenderRequiredMessage_submissionDeadline}" showOn="button"/>
+                        <p:calendar id="submissionDeadline" pattern="yyyy/MM/dd" value="#{tenderController.selected.submissionDeadline}" title="#{bundle.EditTenderTitle_submissionDeadline}" required="true" requiredMessage="#{bundle.EditTenderRequiredMessage_submissionDeadline}" showOn="button"/>
                         <p:outputLabel value="#{bundle.EditTenderLabel_funderId}" for="funderId" />
                         <p:selectOneMenu id="funderId" value="#{tenderController.selected.funderId}" >
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{funderController.itemsAvailableSelectOne}"
                                            var="funderIdItem"
+                                           itemLabel="#{funderIdItem.name}"
                                            itemValue="#{funderIdItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>

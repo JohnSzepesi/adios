@@ -12,8 +12,7 @@
             <h:form id="FunderEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{funderController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditFunderLabel_funderId}" for="funderId" />
-                        <p:inputText id="funderId" value="#{funderController.selected.funderId}" title="#{bundle.EditFunderTitle_funderId}" required="true" requiredMessage="#{bundle.EditFunderRequiredMessage_funderId}"/>
+                        
                         <p:outputLabel value="#{bundle.EditFunderLabel_name}" for="name" />
                         <p:inputText id="name" value="#{funderController.selected.name}" title="#{bundle.EditFunderTitle_name}" required="true" requiredMessage="#{bundle.EditFunderRequiredMessage_name}"/>
                         <p:outputLabel value="#{bundle.EditFunderLabel_webpage}" for="webpage" />

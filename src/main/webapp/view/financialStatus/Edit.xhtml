@@ -12,8 +12,7 @@
             <h:form id="FinancialStatusEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{financialStatusController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditFinancialStatusLabel_financialstatusId}" for="financialstatusId" />
-                        <p:inputText id="financialstatusId" value="#{financialStatusController.selected.financialstatusId}" title="#{bundle.EditFinancialStatusTitle_financialstatusId}" required="true" requiredMessage="#{bundle.EditFinancialStatusRequiredMessage_financialstatusId}"/>
+                        
                         <p:outputLabel value="#{bundle.EditFinancialStatusLabel_financialStatusName}" for="financialStatusName" />
                         <p:inputText id="financialStatusName" value="#{financialStatusController.selected.financialStatusName}" title="#{bundle.EditFinancialStatusTitle_financialStatusName}" />
                     </p:panelGrid>

@@ -12,8 +12,7 @@
             <h:form id="FunderContactViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{funderContactController.selected != null}">
-                        <h:outputText value="#{bundle.ViewFunderContactLabel_fundercontactId}"/>
-                        <h:outputText value="#{funderContactController.selected.fundercontactId}" title="#{bundle.ViewFunderContactTitle_fundercontactId}"/>
+                        
                         <h:outputText value="#{bundle.ViewFunderContactLabel_fullNameFundcont}"/>
                         <h:outputText value="#{funderContactController.selected.fullNameFundcont}" title="#{bundle.ViewFunderContactTitle_fullNameFundcont}"/>
                         <h:outputText value="#{bundle.ViewFunderContactLabel_phone}"/>
@@ -21,7 +20,7 @@
                         <h:outputText value="#{bundle.ViewFunderContactLabel_email}"/>
                         <h:outputText value="#{funderContactController.selected.email}" title="#{bundle.ViewFunderContactTitle_email}"/>
                         <h:outputText value="#{bundle.ViewFunderContactLabel_funderId}"/>
-                        <h:outputText value="#{funderContactController.selected.funderId}" title="#{bundle.ViewFunderContactTitle_funderId}"/>
+                        <h:outputText value="#{funderContactController.selected.funderId.name}" title="#{bundle.ViewFunderContactTitle_funderId}"/>
                     </p:panelGrid>
                     <p:commandButton value="#{bundle.Close}" onclick="FunderContactViewDialog.hide()"/>
                 </h:panelGroup>

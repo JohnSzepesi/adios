@@ -12,8 +12,7 @@
             <h:form id="TenderViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{tenderController.selected != null}">
-                        <h:outputText value="#{bundle.ViewTenderLabel_tenderId}"/>
-                        <h:outputText value="#{tenderController.selected.tenderId}" title="#{bundle.ViewTenderTitle_tenderId}"/>
+                        
                         <h:outputText value="#{bundle.ViewTenderLabel_tenderName}"/>
                         <h:outputText value="#{tenderController.selected.tenderName}" title="#{bundle.ViewTenderTitle_tenderName}"/>
                         <h:outputText value="#{bundle.ViewTenderLabel_tenderShortname}"/>
@@ -22,26 +21,26 @@
                         <h:outputText value="#{tenderController.selected.tenderWebpage}" title="#{bundle.ViewTenderTitle_tenderWebpage}"/>
                         <h:outputText value="#{bundle.ViewTenderLabel_notificationDeadline}"/>
                         <h:outputText value="#{tenderController.selected.notificationDeadline}" title="#{bundle.ViewTenderTitle_notificationDeadline}">
-                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                            <f:convertDateTime pattern="yyyy/MM/dd" />
                         </h:outputText>
                         <h:outputText value="#{bundle.ViewTenderLabel_financialDeadline}"/>
                         <h:outputText value="#{tenderController.selected.financialDeadline}" title="#{bundle.ViewTenderTitle_financialDeadline}">
-                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                            <f:convertDateTime pattern="yyyy/MM/dd" />
                         </h:outputText>
                         <h:outputText value="#{bundle.ViewTenderLabel_facultyDeadline}"/>
                         <h:outputText value="#{tenderController.selected.facultyDeadline}" title="#{bundle.ViewTenderTitle_facultyDeadline}">
-                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                            <f:convertDateTime pattern="yyyy/MM/dd" />
                         </h:outputText>
                         <h:outputText value="#{bundle.ViewTenderLabel_tenderCenterDeadline}"/>
                         <h:outputText value="#{tenderController.selected.tenderCenterDeadline}" title="#{bundle.ViewTenderTitle_tenderCenterDeadline}">
-                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                            <f:convertDateTime pattern="yyyy/MM/dd" />
                         </h:outputText>
                         <h:outputText value="#{bundle.ViewTenderLabel_submissionDeadline}"/>
                         <h:outputText value="#{tenderController.selected.submissionDeadline}" title="#{bundle.ViewTenderTitle_submissionDeadline}">
-                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                            <f:convertDateTime pattern="yyyy/MM/dd" />
                         </h:outputText>
                         <h:outputText value="#{bundle.ViewTenderLabel_funderId}"/>
-                        <h:outputText value="#{tenderController.selected.funderId}" title="#{bundle.ViewTenderTitle_funderId}"/>
+                        <h:outputText value="#{tenderController.selected.funderId.name}" title="#{bundle.ViewTenderTitle_funderId}"/>
                     </p:panelGrid>
                     <p:commandButton value="#{bundle.Close}" onclick="TenderViewDialog.hide()"/>
                 </h:panelGroup>

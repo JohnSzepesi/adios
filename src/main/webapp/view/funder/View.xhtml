@@ -12,8 +12,7 @@
             <h:form id="FunderViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{funderController.selected != null}">
-                        <h:outputText value="#{bundle.ViewFunderLabel_funderId}"/>
-                        <h:outputText value="#{funderController.selected.funderId}" title="#{bundle.ViewFunderTitle_funderId}"/>
+                        
                         <h:outputText value="#{bundle.ViewFunderLabel_name}"/>
                         <h:outputText value="#{funderController.selected.name}" title="#{bundle.ViewFunderTitle_name}"/>
                         <h:outputText value="#{bundle.ViewFunderLabel_webpage}"/>

@@ -12,8 +12,7 @@
             <h:form id="ProjectAdministratorViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{projectAdministratorController.selected != null}">
-                        <h:outputText value="#{bundle.ViewProjectAdministratorLabel_projectadministratorId}"/>
-                        <h:outputText value="#{projectAdministratorController.selected.projectadministratorId}" title="#{bundle.ViewProjectAdministratorTitle_projectadministratorId}"/>
+                        
                         <h:outputText value="#{bundle.ViewProjectAdministratorLabel_fullNameProadmin}"/>
                         <h:outputText value="#{projectAdministratorController.selected.fullNameProadmin}" title="#{bundle.ViewProjectAdministratorTitle_fullNameProadmin}"/>
                         <h:outputText value="#{bundle.ViewProjectAdministratorLabel_mobile}"/>
@@ -21,7 +20,7 @@
                         <h:outputText value="#{bundle.ViewProjectAdministratorLabel_email}"/>
                         <h:outputText value="#{projectAdministratorController.selected.email}" title="#{bundle.ViewProjectAdministratorTitle_email}"/>
                         <h:outputText value="#{bundle.ViewProjectAdministratorLabel_unitId}"/>
-                        <h:outputText value="#{projectAdministratorController.selected.unitId}" title="#{bundle.ViewProjectAdministratorTitle_unitId}"/>
+                        <h:outputText value="#{projectAdministratorController.selected.unitId.unitName}" title="#{bundle.ViewProjectAdministratorTitle_unitId}"/>
                     </p:panelGrid>
                     <p:commandButton value="#{bundle.Close}" onclick="ProjectAdministratorViewDialog.hide()"/>
                 </h:panelGroup>

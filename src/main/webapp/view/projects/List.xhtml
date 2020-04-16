@@ -279,21 +279,21 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProjectsTitle_projectadministratorId}"/>
                             </f:facet>
-                            <h:outputText value="#{item.projectadministratorId}"/>
+                            <h:outputText value="#{item.projectadministratorId.fullNameProadmin}"/>
                         </p:column>
                         
                         <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProjectsTitle_financialcoordinatorId}"/>
                             </f:facet>
-                            <h:outputText value="#{item.financialcoordinatorId}"/>
+                            <h:outputText value="#{item.financialcoordinatorId.fullNameFincoord}"/>
                         </p:column>
                         
                         <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProjectsTitle_projectmanagerId}"/>
                             </f:facet>
-                            <h:outputText value="#{item.projectmanagerId}"/>
+                            <h:outputText value="#{item.projectmanagerId.fullNamePromanag}"/>
                         </p:column>
                         
                         <!--<p:column styleClass="centeredText">
@@ -307,14 +307,14 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProjectsTitle_currencyId}"/>
                             </f:facet>
-                            <h:outputText value="#{item.currencyId}"/>
+                            <h:outputText value="#{item.currencyId.currencyName}"/>
                         </p:column>
                         
                         <p:column styleClass="centeredText">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListProjectsTitle_tenderId}"/>
                             </f:facet>
-                            <h:outputText value="#{item.tenderId}"/>
+                            <h:outputText value="#{item.tenderId.tenderShortname}"/>
                         </p:column>
                         
                         <f:facet name="footer">

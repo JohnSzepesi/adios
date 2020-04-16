@@ -23,6 +23,7 @@
                         <p:selectOneMenu id="funderId" value="#{funderContactController.selected.funderId}" >
                             <f:selectItems value="#{funderController.itemsAvailableSelectOne}"
                                            var="funderIdItem"
+                                           itemLabel="#{funderIdItem.name}"
                                            itemValue="#{funderIdItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>

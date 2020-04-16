@@ -12,8 +12,7 @@
             <h:form id="ProjectStatusViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{projectStatusController.selected != null}">
-                        <h:outputText value="#{bundle.ViewProjectStatusLabel_projectstatusId}"/>
-                        <h:outputText value="#{projectStatusController.selected.projectstatusId}" title="#{bundle.ViewProjectStatusTitle_projectstatusId}"/>
+                        
                         <h:outputText value="#{bundle.ViewProjectStatusLabel_projectStatusName}"/>
                         <h:outputText value="#{projectStatusController.selected.projectStatusName}" title="#{bundle.ViewProjectStatusTitle_projectStatusName}"/>
                     </p:panelGrid>

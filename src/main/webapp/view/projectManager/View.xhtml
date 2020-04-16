@@ -12,8 +12,7 @@
             <h:form id="ProjectManagerViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{projectManagerController.selected != null}">
-                        <h:outputText value="#{bundle.ViewProjectManagerLabel_projectmanagerId}"/>
-                        <h:outputText value="#{projectManagerController.selected.projectmanagerId}" title="#{bundle.ViewProjectManagerTitle_projectmanagerId}"/>
+                        
                         <h:outputText value="#{bundle.ViewProjectManagerLabel_fullNamePromanag}"/>
                         <h:outputText value="#{projectManagerController.selected.fullNamePromanag}" title="#{bundle.ViewProjectManagerTitle_fullNamePromanag}"/>
                         <h:outputText value="#{bundle.ViewProjectManagerLabel_mobile}"/>

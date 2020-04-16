@@ -12,8 +12,7 @@
             <h:form id="FinancialCoordinatorViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{financialCoordinatorController.selected != null}">
-                        <h:outputText value="#{bundle.ViewFinancialCoordinatorLabel_financialcoordinatorId}"/>
-                        <h:outputText value="#{financialCoordinatorController.selected.financialcoordinatorId}" title="#{bundle.ViewFinancialCoordinatorTitle_financialcoordinatorId}"/>
+                        
                         <h:outputText value="#{bundle.ViewFinancialCoordinatorLabel_fullNameFincoord}"/>
                         <h:outputText value="#{financialCoordinatorController.selected.fullNameFincoord}" title="#{bundle.ViewFinancialCoordinatorTitle_fullNameFincoord}"/>
                         <h:outputText value="#{bundle.ViewFinancialCoordinatorLabel_phone}"/>

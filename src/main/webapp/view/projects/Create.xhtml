@@ -11,7 +11,7 @@
         <p:dialog id="ProjectsCreateDlg" widgetVar="ProjectsCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateProjectsTitle}">
             <h:form id="ProjectsCreateForm">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="8" rendered="#{projectsController.selected != null}">
+                    <p:panelGrid columns="6" rendered="#{projectsController.selected != null}">
                         
                         <p:outputLabel value="#{bundle.CreateProjectsLabel_identificationNumber}" for="identificationNumber" />
                         <p:inputText id="identificationNumber" value="#{projectsController.selected.identificationNumber}" title="#{bundle.CreateProjectsTitle_identificationNumber}" required="true" requiredMessage="#{bundle.CreateProjectsRequiredMessage_identificationNumber}"/>
@@ -72,48 +72,49 @@
                         <p:selectOneMenu id="unitId" value="#{projectsController.selected.unitId}" >
                             <f:selectItems value="#{unitController.itemsAvailableSelectOne}"
                                            var="unitIdItem"
+                                           itemLabel="#{unitIdItem.unitName}"
                                            itemValue="#{unitIdItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateProjectsLabel_fundercontactId}" for="fundercontactId" />
                         <p:selectOneMenu id="fundercontactId" value="#{projectsController.selected.fundercontactId}" >
                             <f:selectItems value="#{funderContactController.itemsAvailableSelectOne}"
                                            var="fundercontactIdItem"
-                                           itemLabel="#{funderContactIdItem.fullNameFundcont}"
+                                           itemLabel="#{fundercontactIdItem.fullNameFundcont}"
                                            itemValue="#{fundercontactIdItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateProjectsLabel_projectstatusId}" for="projectstatusId" />
                         <p:selectOneMenu id="projectstatusId" value="#{projectsController.selected.projectstatusId}" >
                             <f:selectItems value="#{projectStatusController.itemsAvailableSelectOne}"
                                            var="projectstatusIdItem"
-                                           itemLabel="#{projectStatusIdItem.projectStatusName}"
+                                           itemLabel="#{projectstatusIdItem.projectStatusName}"
                                            itemValue="#{projectstatusIdItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateProjectsLabel_projectadministratorId}" for="projectadministratorId" />
                         <p:selectOneMenu id="projectadministratorId" value="#{projectsController.selected.projectadministratorId}" >
                             <f:selectItems value="#{projectAdministratorController.itemsAvailableSelectOne}"
                                            var="projectadministratorIdItem"
-                                           itemLabel="#{projectAdministratorIdItem.fullNameProadmin}"
+                                           itemLabel="#{projectadministratorIdItem.fullNameProadmin}"
                                            itemValue="#{projectadministratorIdItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateProjectsLabel_financialcoordinatorId}" for="financialcoordinatorId" />
                         <p:selectOneMenu id="financialcoordinatorId" value="#{projectsController.selected.financialcoordinatorId}" >
                             <f:selectItems value="#{financialCoordinatorController.itemsAvailableSelectOne}"
                                            var="financialcoordinatorIdItem"
-                                           itemLabel="#{financialCoordinatorIdItem.fullNameFincoord}"
+                                           itemLabel="#{financialcoordinatorIdItem.fullNameFincoord}"
                                            itemValue="#{financialcoordinatorIdItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateProjectsLabel_projectmanagerId}" for="projectmanagerId" />
                         <p:selectOneMenu id="projectmanagerId" value="#{projectsController.selected.projectmanagerId}" >
                             <f:selectItems value="#{projectManagerController.itemsAvailableSelectOne}"
                                            var="projectmanagerIdItem"
-                                           itemLabel="#{projectManagerIdItem.fullNamePromanag}"
+                                           itemLabel="#{projectmanagerIdItem.fullNamePromanag}"
                                            itemValue="#{projectmanagerIdItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateProjectsLabel_financialstatusId}" for="financialstatusId" />
                         <p:selectOneMenu id="financialstatusId" value="#{projectsController.selected.financialstatusId}" >
                             <f:selectItems value="#{financialStatusController.itemsAvailableSelectOne}"
                                            var="financialstatusIdItem"
-                                           itemLabel="#{financialStatusIdItem.financialStatusName}"
+                                           itemLabel="#{financialstatusIdItem.financialStatusName}"
                                            itemValue="#{financialstatusIdItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateProjectsLabel_currencyId}" for="currencyId" />
@@ -127,7 +128,7 @@
                         <p:selectOneMenu id="tenderId" value="#{projectsController.selected.tenderId}" >
                             <f:selectItems value="#{tenderController.itemsAvailableSelectOne}"
                                            var="tenderIdItem"
-                                           itemLabel="#{tenderIdItem.name}"
+                                           itemLabel="#{tenderIdItem.tenderName}"
                                            itemValue="#{tenderIdItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>

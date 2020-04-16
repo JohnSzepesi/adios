@@ -12,8 +12,7 @@
             <h:form id="CurrencyViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{currencyController.selected != null}">
-                        <h:outputText value="#{bundle.ViewCurrencyLabel_currencyId}"/>
-                        <h:outputText value="#{currencyController.selected.currencyId}" title="#{bundle.ViewCurrencyTitle_currencyId}"/>
+                        
                         <h:outputText value="#{bundle.ViewCurrencyLabel_currencyName}"/>
                         <h:outputText value="#{currencyController.selected.currencyName}" title="#{bundle.ViewCurrencyTitle_currencyName}"/>
                     </p:panelGrid>

@@ -12,8 +12,7 @@
             <h:form id="FinancialStatusViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{financialStatusController.selected != null}">
-                        <h:outputText value="#{bundle.ViewFinancialStatusLabel_financialstatusId}"/>
-                        <h:outputText value="#{financialStatusController.selected.financialstatusId}" title="#{bundle.ViewFinancialStatusTitle_financialstatusId}"/>
+                        
                         <h:outputText value="#{bundle.ViewFinancialStatusLabel_financialStatusName}"/>
                         <h:outputText value="#{financialStatusController.selected.financialStatusName}" title="#{bundle.ViewFinancialStatusTitle_financialStatusName}"/>
                     </p:panelGrid>

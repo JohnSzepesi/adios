@@ -12,8 +12,7 @@
             <h:form id="ProjectManagerEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{projectManagerController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditProjectManagerLabel_projectmanagerId}" for="projectmanagerId" />
-                        <p:inputText id="projectmanagerId" value="#{projectManagerController.selected.projectmanagerId}" title="#{bundle.EditProjectManagerTitle_projectmanagerId}" required="true" requiredMessage="#{bundle.EditProjectManagerRequiredMessage_projectmanagerId}"/>
+                        
                         <p:outputLabel value="#{bundle.EditProjectManagerLabel_fullNamePromanag}" for="fullNamePromanag" />
                         <p:inputText id="fullNamePromanag" value="#{projectManagerController.selected.fullNamePromanag}" title="#{bundle.EditProjectManagerTitle_fullNamePromanag}" required="true" requiredMessage="#{bundle.EditProjectManagerRequiredMessage_fullNamePromanag}"/>
                         <p:outputLabel value="#{bundle.EditProjectManagerLabel_mobile}" for="mobile" />

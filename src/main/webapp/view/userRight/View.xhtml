@@ -12,8 +12,7 @@
             <h:form id="UserRightViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{userRightController.selected != null}">
-                        <h:outputText value="#{bundle.ViewUserRightLabel_userrightId}"/>
-                        <h:outputText value="#{userRightController.selected.userrightId}" title="#{bundle.ViewUserRightTitle_userrightId}"/>
+                        
                         <h:outputText value="#{bundle.ViewUserRightLabel_userRightName}"/>
                         <h:outputText value="#{userRightController.selected.userRightName}" title="#{bundle.ViewUserRightTitle_userRightName}"/>
                     </p:panelGrid>

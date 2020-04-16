@@ -12,8 +12,7 @@
             <h:form id="FunderContactEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{funderContactController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditFunderContactLabel_fundercontactId}" for="fundercontactId" />
-                        <p:inputText id="fundercontactId" value="#{funderContactController.selected.fundercontactId}" title="#{bundle.EditFunderContactTitle_fundercontactId}" required="true" requiredMessage="#{bundle.EditFunderContactRequiredMessage_fundercontactId}"/>
+                        
                         <p:outputLabel value="#{bundle.EditFunderContactLabel_fullNameFundcont}" for="fullNameFundcont" />
                         <p:inputText id="fullNameFundcont" value="#{funderContactController.selected.fullNameFundcont}" title="#{bundle.EditFunderContactTitle_fullNameFundcont}" required="true" requiredMessage="#{bundle.EditFunderContactRequiredMessage_fullNameFundcont}"/>
                         <p:outputLabel value="#{bundle.EditFunderContactLabel_phone}" for="phone" />
@@ -25,6 +24,7 @@
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{funderController.itemsAvailableSelectOne}"
                                            var="funderIdItem"
+                                           itemLabel="#{funderIdItem.name}"
                                            itemValue="#{funderIdItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
